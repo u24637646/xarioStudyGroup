@@ -1,0 +1,34 @@
+﻿
+@model IEnumerable<xarioStudyGroup.Models.MembersModel>
+
+@{
+    ViewBag.Title = "ListMembers";
+}
+
+@*Page Heading*@
+<h2>List of Study Group Members</h2>
+
+@*Creating the table to display the list of members*@
+<table class="table">
+
+    @*Creating the headers of the table*@
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.StudentNumber)</th>
+        <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+        <th>@Html.DisplayNameFor(model => model.Surname)</th>
+        <th>@Html.DisplayNameFor(model => model.EmailAddress)</th>
+    </tr>
+
+    @*Adding the data to the table using a loop*@
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.StudentNumber)</td>
+            <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+            <td>@Html.DisplayFor(modelItem => item.Surname)</td>
+            <td>@Html.DisplayFor(modelItem => item.EmailAddress)</td>
+        </tr>
+    }
+        
+</table>
+
